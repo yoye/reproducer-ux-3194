@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if with %}
+        <twig:WithValidator :value="value_object" />
+    {% else %}
+        <twig:WithoutValidator :value="value_object" />
+    {% endif %}
+
+    <a href="{{ path(with ? 'homepage' : 'app_with') }}">Visit other page</a>
+{% endblock %}
